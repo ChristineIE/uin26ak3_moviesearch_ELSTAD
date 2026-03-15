@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import History from "../components/History";
+import MovieItem from "../components/MovieItem";
+import MovieList from "../components/MovieList";
 
 export default function Home() {
   const [search, setSearch] = useState("");
@@ -38,6 +40,8 @@ export default function Home() {
   }, [history]);
 
   const getMovies = async () => {
+    if (search.length < 3) return; //Rettet opp i liten skrivefeil her ved hjelp av ChatGPT. Fra ">" til "<".
+
     try {
       const response = await fetch(`${baseUrl}&s=${search}`);
       const data = await response.json();
@@ -83,21 +87,7 @@ export default function Home() {
         <button onClick={getMovies}>Søk</button>
       </form>
       <section>
-        <ul>
-          {movies.map((movie) => (
-            <li key={movie.imdbID}>
-              {" "}
-              {/* Konferert med ChatGPT for å verifisere map og hva som blir riktig key */}
-              <h2>{movie.Title}</h2>
-              <p>{movie.Year}</p>
-              {movie.Poster !== "N/A" ? (
-                <img src={movie.Poster} alt={movie.Title} />
-              ) : (
-                <p>Bilde ikke tilgjengelig</p>
-              )}
-            </li>
-          ))}
-        </ul>
+        <MovieList movies={movies} />
       </section>
     </main>
   );
