@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import History from "../components/History";
-import MovieItem from "../components/MovieItem";
 import MovieList from "../components/MovieList";
 
 export default function Home() {
@@ -74,7 +73,7 @@ export default function Home() {
       <h1>Den store filmoversikten</h1>
       <form onSubmit={handleSubmit}>
         <label>
-          Søk etter film
+          Søk etter din neste film
           <input
             type="search"
             placeholder="Harry Potter"

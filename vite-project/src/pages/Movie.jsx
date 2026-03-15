@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 //Slet med å få dette til å funke pga. feil navn på const. Ble mye knot og "følgefeil" på grunn av det. Konfererte derfor en del med ChatGPT.
 export default function Movie() {
@@ -26,11 +27,16 @@ export default function Movie() {
 
   return (
     <main>
-      <section>
+      <section className="movieSection">
         <h2>{movieData.Title}</h2>
+        <img src={movieData.Poster} alt={movieData.Title} />
         <p>{movieData.Plot}</p>
       </section>
-      <section></section>
+      <section>
+        <Link to="/" className="backButton">
+          ← Tilbake til filmsøk
+        </Link>
+      </section>
     </main>
   );
 }
