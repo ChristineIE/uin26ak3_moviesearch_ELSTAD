@@ -29,7 +29,12 @@ export default function Movie() {
     <main>
       <section className="movieSection">
         <h2>{movieData.Title}</h2>
-        <img src={movieData.Poster} alt={movieData.Title} />
+        <p>{movieData.Year}</p>
+        <img
+          src={movieData.Poster}
+          alt={movieData.Title}
+          className="imgMovieSection"
+        />
         <p>{movieData.Plot}</p>
       </section>
       <section>

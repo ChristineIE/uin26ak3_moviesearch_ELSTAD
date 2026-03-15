@@ -81,7 +81,7 @@ input {
   max-width: 400px;
   width: 100%;
   background-color: #f9f9f9;
-  border: 1px solid black;
+  border: 1px solid #3b3737;
   margin: 1rem;
   text-align: center;
   color: #0a0a0a;
@@ -92,6 +92,7 @@ button {
   width: 100%;
   max-width: 200px;
   background-color: #3b3737;
+  border-radius: 10px;
 }
 ul {
   display: flex;
@@ -111,7 +112,6 @@ ul {
   flex-direction: column;
   justify-content: space-evenly;
   width: 220px;
-  border: 1px solid #0a0a0a;
   border-radius: 20px;
   background-color: #f9f9f9;
   padding: 1rem;
@@ -121,14 +121,15 @@ ul {
 .movieItem img {
   height: 250px;
   width: 100%;
+  border-radius: 20px;
 }
 
 a {
-  color: #0a0a0a;
+  color: #3b3737;
 }
 
 a:hover {
-  color: #0a0a0a;
+  color: #3b3737;
 }
 
 .movieSection {
@@ -137,7 +138,19 @@ a:hover {
   padding: 1rem;
 }
 
+.movieSection p {
+  width: 100%;
+  max-width: 400px;
+}
+
 .backButton {
   color: #f9f9f9;
   padding: 1rem;
+}
+
+.imgMovieSection {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 20px;
 }
