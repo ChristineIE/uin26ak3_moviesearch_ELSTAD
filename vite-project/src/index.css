@@ -28,6 +28,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #8b8080;
 }
 
 h1 {
@@ -70,10 +71,27 @@ button:focus-visible {
 ul {
   display: flex;
   flex-wrap: wrap;
+  list-style: none;
+  gap: 1rem;
+  padding: 0;
+  justify-content: space-around;
 }
 
-#movieItemIl {
-  max-width: 150px;
-  width: 100%;
-  list-style-type: none;
+.movieItem h2 {
+  font-size: 1rem;
+}
+
+.movieItem {
+  width: 250px;
+  border: 1px solid rgb(185, 173, 173);
+  border-radius: 12px;
+  background-color: rgb(235, 228, 219);
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.movieItem img {
+  width: 200px;
+  height: 250px;
+  justify-self: end;
 }

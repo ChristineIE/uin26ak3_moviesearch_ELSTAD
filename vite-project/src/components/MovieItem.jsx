@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function MovieItem({ movie }) {
   return (
-    <li key={movie.imdbID} className="movieItemLi">
+    <li key={movie.imdbID} className="movieItem">
       {/* Konferert med ChatGPT for å verifisere hva som blir riktig key */}
       <Link to={`/${movie.imdbID}`}>
         <h2>{movie.Title}</h2>
