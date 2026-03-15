@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import History from "../components/History";
 
 export default function Home() {
-  const [search, setSearch] = useState();
+  const [search, setSearch] = useState("");
+  const [movies, setMovies] = useState([]);
   const storedHistory = localStorage.getItem("search");
   const [focused, setFocused] = useState(false);
   const [history, setHistory] = useState(
@@ -21,8 +22,13 @@ export default function Home() {
     try {
       const response = await fetch(`${baseUrl}&s=${search}`);
       const data = await response.json();
-      console.log(data);
+      if (data.Search) {
+        setMovies(data.Search);
+      } else {
+        setMovies([]);
+      }
     } catch (err) {
+      //Fikk hjelp av chatGPT her da jeg hadde en ekstra "}" som jeg ikke så: https://chatgpt.com/share/69b6bcbf-6060-8006-9f84-cd5c234d02f4
       console.error(err);
     }
   };
@@ -58,6 +64,11 @@ export default function Home() {
         {focused ? <History history={history} setSearch={setSearch} /> : null}
         <button onClick={getMovies}>Søk</button>
       </form>
+      <section>
+        <ul>
+          <li>HER SKAL FILMER INN</li>
+        </ul>
+      </section>
     </main>
   );
 }
