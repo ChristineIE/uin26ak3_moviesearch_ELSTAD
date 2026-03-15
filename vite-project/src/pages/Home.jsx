@@ -33,11 +33,11 @@ export default function Home() {
     };
 
     jamesBondFrontPage();
-  }, []);
+  }, [baseUrl]);
 
   useEffect(() => {
     localStorage.setItem("search", JSON.stringify(history));
-  }, [history]);
+  }, [baseUrl, history]);
 
   const getMovies = async () => {
     if (search.length < 3) return; //Rettet opp i liten skrivefeil her ved hjelp av ChatGPT. Fra ">" til "<".
